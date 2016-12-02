@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var {Provider} = require('react-redux');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
-var Main = require('Main');
+var App = require('App');
 
 // Load Foundation
 $(document).foundation();
@@ -15,7 +15,7 @@ ReactDOM.render(
   <Provider>
     <Router history={hashHistory}>
       <Route path="/">
-        <IndexRoute component={Main}/>
+        <IndexRoute component={App}/>
       </Route>
     </Router>
   </Provider>,
