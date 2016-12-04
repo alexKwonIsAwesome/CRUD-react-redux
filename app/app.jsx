@@ -4,6 +4,7 @@ var {Provider} = require('react-redux');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 var App = require('App');
+var PostList = require('PostsList');
 
 // Load Foundation
 $(document).foundation();
@@ -11,11 +12,13 @@ $(document).foundation();
 // App css
 require('style!css!sass!applicationStyles');
 
+const store = createStore(() => {});
+
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <Router history={hashHistory}>
-      <Route path="/">
-        <IndexRoute component={App}/>
+      <Route path="/" component={App}>
+        <IndexRoute component={PostList}/>
       </Route>
     </Router>
   </Provider>,
